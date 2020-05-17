@@ -1,0 +1,28 @@
+{
+  "name": "infobot",
+  "version": "1.0.0",
+  "description": "Very awesome Discord bot for the Discord Server :: https://discord.gg/XcmWQb7",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daxtor134/infobot.git"
+  },
+  "keywords": [
+    "Discordjs"
+  ],
+  "author": "Daxtor134",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daxtor134/infobot/issues"
+  },
+  "homepage": "https://github.com/Daxtor134/infobot#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
