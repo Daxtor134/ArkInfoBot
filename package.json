@@ -4,7 +4,8 @@
   "description": "Very awesome Discord bot for the Discord Server :: https://discord.gg/XcmWQb7",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "test": "nodemon index"
   },
   "repository": {
     "type": "git",
