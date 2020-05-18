@@ -1,7 +1,7 @@
 {
   "name": "arkinfobot",
   "version": "1.1.0",
-  "description": "Basic bot that gives information about a user.",
+  "description": "Basic bot that gives information about a user. (https://discord.com/api/oauth2/authorize?client_id=711409811467534359&permissions=93254&scope=bot)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
