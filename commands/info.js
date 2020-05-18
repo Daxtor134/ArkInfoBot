@@ -4,7 +4,7 @@ module.exports = {
       "args": false,
       "usage": "no usage available",
       "guildOnly": false,
-      execute(msg, args)
+      execute(message, args)
       {
           // TODO: Write help command
       }
