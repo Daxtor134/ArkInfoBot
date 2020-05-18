@@ -50,7 +50,7 @@ client.on(`message`, msg => {
             reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
         }
 
-        return  msg.channel.send(reply);
+        return msg.channel.send(reply);
     }
 
     try
