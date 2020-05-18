@@ -36,8 +36,8 @@ client.commands = new Discord.Collection();
 const CommandFiles = fs.readdirSync(`./commands`).filter(file => file.endsWith(`.js`));
 for (const file of CommandFiles)
 {
-      const Command = require(`./commands/${file}`);
-      client.commands.set(Command.name, Command);
+      const command = require(`./commands/${file}`);
+      client.commands.set(command.name, command);
       log(chalk.cyan(`Loaded command file: ${chalk.bold(file)}`));
 }
 
@@ -50,7 +50,7 @@ client.once(`ready`, () => {
       log(chalk.green(`${client.user.tag} is now running, the commands have loaded . . . everything is good to go chief!!!`));
       
       // Set the bots activity!
-      client.user.setActivity('lilarkk', { type: `WATCHING` })
+      client.user.setActivity(`lilarkk | ${prefix}`, { type: `WATCHING` })
       .then(presence => log(chalk.yellow(`Activity set to ${presence.activities[0].type} ${presence.activities[0].name}`)))
       .catch(console.error);
 });
@@ -68,10 +68,11 @@ client.on(`message`, message => {
       const CommandName = args.shift().toLowerCase();
 
       // The command pulled from the commands collection.
-      const command = client.commands.get(CommandName);
+      const command = client.commands.get(CommandName)
+            || client.commands.get(cmd => cmd.aliases && cmd.aliases.includes(CommandName));
 
       // If the command does not exist the code breaks.
-      if (!command) return;
+      if (!command) return message.channel.send(`Sorry but that command does not exist, ${message.author}`);
 
       // Checks if the command is set to guild only in the command settings.
       if (command.guildOnly && message.channel.type !== `text`) return message.reply(`I can't execute that command inside of the **DM's**! Sorry.`);
