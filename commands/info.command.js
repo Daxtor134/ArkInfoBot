@@ -48,7 +48,6 @@ module.exports = {
                         .setAuthor(`ArkInfoBot`, `https://i.imgur.com/lQHyj4A.jpg`)
                         .setThumbnail(AccountInformation.Twitch.thumb)
                         .addField(`Channel Link`, `${AccountInformation.Twitch.url}`)
-                        .addField(`Watch a video!`, `https://www.youtube.com/watch?v=52ml6SRNtG0`)
                         .setTimestamp()
                         .setFooter(`ArkInfoBot`, `https://i.imgur.com/lQHyj4A.jpg`);
 
