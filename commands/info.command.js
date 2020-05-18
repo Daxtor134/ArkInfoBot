@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
       "name": "info",
       "description": "This command will give info about the person specified in the env. settings.",
@@ -8,4 +10,4 @@ module.exports = {
       {
           // TODO: Write info command.
       }
-  }
+}
