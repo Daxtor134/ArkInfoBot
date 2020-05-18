@@ -6,6 +6,6 @@ module.exports = {
     "guildOnly": false,
     execute(msg, args)
     {
-        msg.reply("Hello World!");
+        // TODO: Write help command
     }
 }
