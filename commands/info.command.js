@@ -32,7 +32,7 @@ module.exports = {
                         .setFooter(`ArkInfoBot`, `${channels.YouTube.ChannelIcon}`);
 
                   // Send the Message Embed
-                  message.reply(YouTubeMessageEmbed);
+                  message.author.send(YouTubeMessageEmbed);
             }
             if (args[0] === "--twitch")
             {
@@ -53,7 +53,7 @@ module.exports = {
                         .setFooter(`ArkInfoBot`, `${channels.Twitch.ChannelIcon}`);
 
                   // Send the Message Embed
-                  message.reply(TwitchMessageEmbed);
+                  message.author.send(TwitchMessageEmbed);
             }
       }
 };
