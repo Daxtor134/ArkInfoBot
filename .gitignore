@@ -121,3 +121,10 @@ temp/
 .history
 
 # End of https://www.gitignore.io/api/node,dotenv,visualstudiocode
+
+# Start of Custom .gitignore def.
+
+npm-debug.log
+.DS_Store
+
+# End of Custom .gitignore def.
