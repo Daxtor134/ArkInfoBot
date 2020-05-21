@@ -111,10 +111,10 @@ temp/
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -126,5 +126,6 @@ temp/
 
 npm-debug.log
 .DS_Store
+package-lock.json
 
 # End of Custom .gitignore def.
