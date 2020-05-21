@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/Daxtor134/ArkInfoBot#readme",
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4"
   },
   "dependencies": {
     "chalk": "^4.0.0",
+    "dotenv": "^8.2.0",
     "discord.js": "^12.2.0"
   },
   "engines": {
