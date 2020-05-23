@@ -95,8 +95,8 @@ client.on('message', message => {
 
       try
       {
-            command.execute(command, args);
-            log(Colors.bold(Colors.rainbow(`@<user-${message.author.id}> has used the command\n${command}`)));
+            command.execute(message, args);
+            log(Colors.bold(Colors.rainbow(`@<user-${message.author.id}> has used the command ${command.name}`)));
       }
       catch(e)
       {
