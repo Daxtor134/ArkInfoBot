@@ -1,0 +1,19 @@
+{
+      "YouTube":
+      {
+            "ChannelName": "Ark",
+            "ChannelDescription": "My name is Ark, sup?",
+            "ChannelIcon": "https://i.imgur.com/lQHyj4A.jpg",
+            "ChannelPreviewVideo": "https://www.youtube.com/watch?v=52ml6SRNtG0",
+            "ChannelLink": "https://www.youtube.com/channel/UC8iFm2BtD5q3HnZOvWHg0CA"
+      },
+      "Twitch":
+      {
+            "ChannelName": "lilarkk",
+            "ChannelDescription": "I'm a up coming streamer who plays games I enjoy. I'm trying to make something from nothing and base my life around something I enjoy but also you can enjoy too. I appreciate the love and help from the community and friends thank you.",
+            "ChannelIcon": "https://i.imgur.com/lQHyj4A.jpg",
+            "ChannelPreviewVideo": "https://www.twitch.tv/videos/623532490",
+            "ChannelLink": "https://www.twitch.tv/lilarkk"
+      },
+      "Discord": { "InviteLink": "https://discord.gg/DBRZs46" }
+}
