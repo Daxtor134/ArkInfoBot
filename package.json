@@ -24,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/Daxtor134/ArkInfoBot/issues"
   },
-  "homepage": "https://github.com/Daxtor134/ArkInfoBot#readme"
+  "homepage": "https://github.com/Daxtor134/ArkInfoBot#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
