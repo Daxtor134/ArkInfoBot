@@ -1,0 +1,28 @@
+{
+  "name": "arkinfobot",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": "12.16.3"
+  },
+  "description": "Custom bot made for the server ArkChat (https://discord.gg/DBRZs46)",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daxtor134/ArkInfoBot.git"
+  },
+  "keywords": [
+    "ArkChatBot",
+    "Discord.js",
+    "Node"
+  ],
+  "author": "Daxtor134",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Daxtor134/ArkInfoBot/issues"
+  },
+  "homepage": "https://github.com/Daxtor134/ArkInfoBot#readme"
+}
