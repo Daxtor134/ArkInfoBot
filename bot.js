@@ -27,6 +27,7 @@
  * dotenv (Used for Enviroment Variables.)
  * fs (File System used for navigating the file system.)
  */
+
 const fs = require('fs');
 const Discord = require('discord.js');
 const Colors = require('colors');
@@ -39,11 +40,24 @@ const token = process.env.LOGIN_TOKEN; // Pulling the login token from the Envir
 const prefix = process.env.PREFIX;     // Pulling the prefix from the Enviroment Variables
 
 const client = new Discord.Client();   // Create the Discord Client (The bot).
+client.commands = new Discord.Collection(); // Commands Collection.
+
+/**
+ * Loads any command files in the "./commands" folder.
+ */
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (file of commandFiles)
+{
+      const command = require(`./commands/${file}`);
+      log(Colors.cyan(`LOADED COMMAND:\n${file}`));
+      client.commands.set(command.name, command);
+}
 
 /**
  * First, we notify the fact that the bot has launched and is ready to accept commands,
  * then we set the bots activity along with it's prefix.
  */
+
 client.once('ready', () => {
       log(Colors.green(`@<bot-${client.user.id}> LOGGED IN . . .\nREADY TO ACCEPT COMMANDS`));
       client.user.setActivity(`lilarkk | ${prefix}`, { type: `WATCHING` })
@@ -51,8 +65,41 @@ client.once('ready', () => {
             .catch(error);
 });
 
+/**
+ * Parse incoming commands.
+ */
+
 client.on('message', message => {
-      // TODO: Create message parsing functionality.
+      if(!message.content.startsWith(prefix) || message.author.bot) return;
+
+      const args = message.content.slice(prefix.length).split(/ +/);
+      const commandName = args.shift().toLowerCase();
+
+      const command = client.commands.get(commandName)
+            || client.commands.get(cmd => cmd.aliases && cmd.alises.includes(commandName));
+      
+      if (!command) return message.channel.send(`Sorry, that command does not exist, ${message.author}`);
+
+      if (command.guildOnly && message.channel.type !== 'text') return message.channel.send(`Sorry but I can't execute this command inside of the DM's sorry.`);
+
+      if (command.args && !args.length)
+      {
+            let reply = `You didn't supply any arguments, ${message.author}`;
+            if (command.usage)
+            {
+                  reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
+            }
+      }
+
+      try
+      {
+            command.execute(command, args);
+            log(Colors.bold(Colors.rainbow(`@<user-${message.author.id}> has used the command\n${command}`)));
+      }
+      catch(e)
+      {
+            error(Colors.red(`RUN-TIME ERROR: ${e}`));
+      }
 });
 
 // Login the bot 🙌
